@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --green-200-lighter: hsl(148, 38%, 91%);
+        --green-600-medium: hsl(169, 82%, 27%);
+        --red: hsl(0, 66%, 54%);
+        --white: hsl(0, 0%, 100%);
+        --grey-500-medium: hsl(186, 15%, 59%);
+        --grey-900-darker: hsl(187, 24%, 22%);
+    }
+    @font-face {
+        font-family: "Karla";
+        src: url(../fonts/Karla-Bold.ttf) format("trutype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 700;
+    }
+    @font-face {
+        font-family: "Karla";
+        src: url(../fonts/Karla-Regular.ttf) format("trutype");
+        font-display: swap;
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+
+@layer components {
+    body {
+        @apply bg-green-200-lighter font-karla flex justify-center items-center min-h-screen;
+    }
+    legend {
+        padding: 0;
+        margin-bottom: 0.5rem;
+    }
+    .container {
+        @apply max-w-xs bg-white rounded-3xl p-6 flex flex-col gap-8 my-8
+    }
+    .form {
+        @apply flex flex-col gap-6;
+    }
+    .label {
+        @apply text-grey-900-darker
+    }
+    .label svg {
+        @apply inline align-top;
+    }
+    .input-field {
+        @apply border-2 w-full py-3 rounded-lg border-grey-500-medium px-5 text-lg hover:border-green-600-medium focus:border-green-600-medium outline-none
+    }
+    .form-control {
+        @apply flex flex-col gap-2 min-w-0 justify-around
+    }
+    fieldset.form-control {
+        @apply gap-4;
+    }
+    .inputs-wrapper {
+        @apply flex flex-col gap-6
+    }
+    .radios-wrapper {
+        @apply flex flex-col gap-4
+    }
+    .input-radio-wrapper {
+        @apply border-2 py-3 rounded-lg border-grey-500-medium px-6 text-lg flex gap-2 items-center cursor-pointer
+    }
+    .input-textarea {
+        @apply h-60 resize-none;
+    }
+    .checkbox-wrapper {
+        @apply flex gap-4 items-center
+    }
+    .input-checkbox, .input-radio {
+        @apply h-5 w-5 border-2 opacity-0 absolute
+    }
+    .input-radio-custom {
+        @apply rounded-full border-green-200-lighter;
+    }
+    .input-checkbox-custom, .input-radio-custom {
+        @apply relative w-5 h-5 border-2 aspect-square
+    }
+    .input-checkbox-custom {
+        @apply border-grey-500-medium
+    }
+    .btn {
+        @apply bg-green-600-medium text-white py-4 w-full rounded-lg font-bold text-lg
+    }
+
+    /* Text Styles */
+    .header {
+        @apply text-3xl font-bold;
+    }
+}
+
+@layer utilities {
+    .input-error {
+        @apply border-red;
+    }
+    .error-msg {
+        @apply text-red
+    }
+    .input-radio-checked{
+        @apply border-green-600-medium bg-green-200-lighter
+    }
+}
