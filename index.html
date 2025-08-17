@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./build/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./build/images/favicon-32x32.png"
+    />
 
-  <link rel="stylesheet" href="./build/css/style.css">
-</head>
-<body>
-  <svg class="hidden" aria-hidden="true">
-    <symbol id="icon-asterisk" viewBox="0 0 24 24">
-      <path d="M11.9999,3 C12.5522,3 12.9999,3.44772 12.9999,4 L12.9999,10.268 L18.4281,7.13397 C18.9064,6.85783 19.518,7.02171 19.7942,7.5 C20.0703,7.97829 19.9064,8.58988 19.4281,8.86603 L13.9999,12 L19.4281,15.134 C19.9064,15.4101 20.0703,16.0217 19.7941,16.5 C19.518,16.9783 18.9064,17.1422 18.4281,16.866 L12.9999,13.7321 L12.9999,20 C12.9999,20.5523 12.5522,21 11.9999,21 C11.4476,21 10.9999,20.5523 10.9999,20 L10.9999,13.7321 L5.57174,16.866 C5.09345,17.1422 4.48186,16.9783 4.20571,16.5 C3.92957,16.0217 4.09345,15.4101 4.57174,15.134 L9.99992,12 L4.5717,8.86603 C4.09341,8.58988 3.92953,7.97829 4.20567,7.5 C4.48182,7.02171 5.09341,6.85783 5.5717,7.13397 L10.9999,10.268 L10.9999,4 C10.9999,3.44772 11.4476,3 11.9999,3 Z" id="路径" fill="#09244B">
-      </path>
-    </symbol>
-  </svg>
-  <main class="container">
+    <title>Frontend Mentor | Contact form</title>
+
+    <link rel="stylesheet" href="./build/css/style.css" />
+  </head>
+  <body>
+    <svg class="hidden" aria-hidden="true">
+      <symbol id="icon-asterisk" viewBox="0 0 24 24">
+        <path
+          d="M11.9999,3 C12.5522,3 12.9999,3.44772 12.9999,4 L12.9999,10.268 L18.4281,7.13397 C18.9064,6.85783 19.518,7.02171 19.7942,7.5 C20.0703,7.97829 19.9064,8.58988 19.4281,8.86603 L13.9999,12 L19.4281,15.134 C19.9064,15.4101 20.0703,16.0217 19.7941,16.5 C19.518,16.9783 18.9064,17.1422 18.4281,16.866 L12.9999,13.7321 L12.9999,20 C12.9999,20.5523 12.5522,21 11.9999,21 C11.4476,21 10.9999,20.5523 10.9999,20 L10.9999,13.7321 L5.57174,16.866 C5.09345,17.1422 4.48186,16.9783 4.20571,16.5 C3.92957,16.0217 4.09345,15.4101 4.57174,15.134 L9.99992,12 L4.5717,8.86603 C4.09341,8.58988 3.92953,7.97829 4.20567,7.5 C4.48182,7.02171 5.09341,6.85783 5.5717,7.13397 L10.9999,10.268 L10.9999,4 C10.9999,3.44772 11.4476,3 11.9999,3 Z"
+          id="路径"
+          fill="#09244B"
+        ></path>
+      </symbol>
+    </svg>
+    <div class="success-modal">
+      <img src="./build/images/icon-success-check.svg" alt="">
+      <h2>Message Sent!</h2>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+    <main class="container">
     <h1 class="header">Contact Us</h1>
     <form id="form" class="form">
       <fieldset class="inputs-wrapper">
@@ -25,75 +39,158 @@
         <div class="form-control">
           <label class="label" for="first-name" id="first-name-label">
             First Name
-            <svg aria-hidden="true" focusable="false" width="10" height="10"><use href="#icon-asterisk"></use></svg>
+            <svg aria-hidden="true" focusable="false" width="10" height="10">
+              <use href="#icon-asterisk"></use>
+            </svg>
             <span class="sr-only">Required</span>
           </label>
-          <input type="text" id="first-name" class="input-field" name="first-name" autocomplete="given-name" aria-invalid="false" aria-describedby="first-name-error" required>
-          <span id="first-name-error" class="error-msg hidden">This field is required</span>
+          <input
+            type="text"
+            id="first-name"
+            class="input-field input"
+            name="first-name"
+            autocomplete="given-name"
+            aria-invalid="false"
+            aria-describedby="first-name-error"
+            required
+          />
+          <span id="first-name-error" class="error-msg hidden"
+            >This field is required</span
+          >
         </div>
         <div class="form-control">
           <label class="label" for="last-name" id="last-name-label">
             Last Name
-            <svg aria-hidden="true" focusable="false" width="10" height="10"><use href="#icon-asterisk"></use></svg>
+            <svg aria-hidden="true" focusable="false" width="10" height="10">
+              <use href="#icon-asterisk"></use>
+            </svg>
             <span class="sr-only">Required</span>
           </label>
-          <input type="text" id="last-name" class="input-field" name="last-name" autocomplete="given-name" aria-invalid="false" aria-describedby="last-name-error" required>
-          <span id="last-name-error" class="error-msg hidden">This field is required</span>
+          <input
+            type="text"
+            id="last-name"
+            class="input-field input"
+            name="last-name"
+            autocomplete="given-name"
+            aria-invalid="false"
+            aria-describedby="last-name-error"
+            required
+          />
+          <span id="last-name-error" class="error-msg hidden"
+            >This field is required</span
+          >
         </div>
       </fieldset>
       <div class="form-control">
         <label class="label" for="email" id="email-label">
           Email Address
-          <svg aria-hidden="true" focusable="false" width="10" height="10"><use href="#icon-asterisk"></use></svg>
+          <svg aria-hidden="true" focusable="false" width="10" height="10">
+            <use href="#icon-asterisk"></use>
+          </svg>
           <span class="sr-only">Required</span>
         </label>
-        <input type="email" id="email" class="input-field" name="email" autocomplete="email" aria-invalid="false" aria-describedby="email-error" required>
-        <span id="email-error" class="error-msg hidden">Please enter a valid email address</span>
+        <input
+          type="email"
+          id="email"
+          class="input-field input"
+          name="email"
+          autocomplete="email"
+          aria-invalid="false"
+          aria-describedby="email-error"
+          required
+        />
+        <span id="email-error" class="error-msg hidden"
+          >Please enter a valid email address</span
+        >
       </div>
       <fieldset class="form-control">
         <legend class="sr-only">Entery query type</legend>
         <div class="label">
           Query Type
-          <svg aria-hidden="true" focusable="false" width="10" height="10"><use href="#icon-asterisk"></use></svg>
+          <svg aria-hidden="true" focusable="false" width="10" height="10">
+            <use href="#icon-asterisk"></use>
+          </svg>
         </div>
         <span class="sr-only">Required</span>
         <div class="radios-wrapper">
           <label class="input-radio-wrapper">
-            <input type="radio" name="query-type" id="general-inquiry" value="general-inquiry" class="input-radio" aria-invalid="false" aria-describedby="query-type-error" required>
+            <input
+              type="radio"
+              name="query-type"
+              id="general-inquiry"
+              value="general-inquiry"
+              class="input-radio input"
+              aria-invalid="false"
+              aria-describedby="query-type-error"
+              required
+            />
             <span class="input-radio-custom" aria-hidden="true"></span>
             <span class="radio-label">General Inquiry</span>
           </label>
           <label class="input-radio-wrapper">
-            <input type="radio" name="query-type" id="support-request" value="support-request"  class="input-radio">
+            <input
+              type="radio"
+              name="query-type"
+              id="support-request"
+              value="support-request"
+              class="input-radio input"
+            />
             <span class="input-radio-custom" aria-hidden="true"></span>
             <span class="radio-label">Support Request</span>
           </label>
         </div>
-        <span class="error-msg hidden" id="query-type-error">Please select query type</span>
+        <span class="error-msg hidden" id="query-type-error"
+          >Please select query type</span
+        >
       </fieldset>
       <div class="form-control">
         <label for="message" class="label">
           Message
-          <svg aria-hidden="true" focusable="false" width="10" height="10"><use href="#icon-asterisk"></use></svg>
+          <svg aria-hidden="true" focusable="false" width="10" height="10">
+            <use href="#icon-asterisk"></use>
+          </svg>
           <span class="sr-only">Required</span>
         </label>
-        <textarea name="message" id="message" aria-invalid="false" aria-describedby="message-error" class="input input-textarea" required></textarea>
-        <span class="error-msg hidden" id="message-error hidden">This field is required</span>
+        <textarea
+          name="message"
+          id="message"
+          aria-invalid="false"
+          aria-describedby="message-error"
+          class="input-field input input-textarea"
+          required
+        ></textarea>
+        <span class="error-msg hidden" id="message-error hidden"
+          >This field is required</span
+        >
       </div>
       <div class="form-control">
         <label class="checkbox-wrapper">
-          <input type="checkbox" name="consent" id="consent" aria-invalid="false" aria-describedby="consent-error" class="input-checkbox" required>
+          <input
+            type="checkbox"
+            name="consent"
+            id="consent"
+            aria-invalid="false"
+            aria-describedby="consent-error"
+            class="input-checkbox input"
+            required
+          />
           <span class="input-checkbox-custom" aria-hidden="true"></span>
           <span class="label">
             I consent to being contacted by the team
-            <svg aria-hidden="true" focusable="false" width="10" height="10"><use href="#icon-asterisk"></use></svg>
+            <svg aria-hidden="true" focusable="false" width="10" height="10">
+              <use href="#icon-asterisk"></use>
+            </svg>
             <span class="sr-only">Required</span>
           </span>
         </label>
-        <span id="consent-eror" class="error-msg hidden">To submit this form, please consent to being contacted</span>
+        <span id="consent-erorr" class="error-msg hidden"
+          >To submit this form, please consent to being contacted</span
+        >
       </div>
       <button type="submit" class="btn">Submit</button>
     </form>
   </main>
-</body>
+
+  </body>
+  <script src="./src/js/main.js"></script>
 </html>

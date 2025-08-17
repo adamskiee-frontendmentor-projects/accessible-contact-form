@@ -29,7 +29,7 @@
 
 @layer components {
     body {
-        @apply bg-green-200-lighter font-karla flex justify-center items-center min-h-screen;
+        @apply bg-green-200-lighter font-karla flex flex-col justify-center items-center min-h-screen;
     }
     legend {
         padding: 0;
@@ -72,17 +72,36 @@
         @apply flex gap-4 items-center
     }
     .input-checkbox, .input-radio {
-        @apply h-5 w-5 border-2 opacity-0 absolute
+        @apply h-6 w-6 border-2 opacity-0 absolute
     }
     .input-radio-custom {
         @apply rounded-full border-green-200-lighter;
     }
     .input-checkbox-custom, .input-radio-custom {
-        @apply relative w-5 h-5 border-2 aspect-square
+        @apply relative w-6 h-6 border-2 aspect-square
     }
     .input-checkbox-custom {
         @apply border-grey-500-medium
     }
+    .input-checkbox:checked + .input-checkbox-custom {
+        @apply bg-[url(../images/icon-checkbox-check.svg)] bg-no-repeat bg-cover;
+    }
+    .input-radio:checked + .input-radio-custom {
+        @apply bg-[url(../images/icon-radio-selected.svg)] bg-no-repeat bg-contain;
+    }
+    .input-radio-wrapper:has(> .input-radio:checked) {
+        @apply bg-green-200-lighter
+    }
+    .success-modal {
+        @apply sticky z-20 bg-grey-900-darker text-white p-4 rounded-xl max-w-72 top-5 grid grid-cols-[auto_1fr] grid-rows-2 items-center justify-center gap-x-3;
+    }
+    .success-modal > h2 {
+        @apply w-full text-lg font-bold
+    }
+    .success-modal > p {
+        @apply col-span-2 text-grey-500-medium
+    }
+
     .btn {
         @apply bg-green-600-medium text-white py-4 w-full rounded-lg font-bold text-lg
     }
@@ -99,8 +118,5 @@
     }
     .error-msg {
         @apply text-red
-    }
-    .input-radio-checked{
-        @apply border-green-600-medium bg-green-200-lighter
     }
 }

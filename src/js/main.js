@@ -3,7 +3,9 @@ class ContactForm {
         this.elements = {
             contactForm: document.getElementById("form"),
             radios: document.querySelectorAll(".input-radio"),
-            consentCheckbox: document.getElementById("consent")
+            inputs: document.querySelectorAll(".input"),
+            consentCheckbox: document.getElementById("consent"),
+            firstName: document.getElementById("first-name")
         }
         this.init();
     }
@@ -15,10 +17,35 @@ class ContactForm {
     bindEvents() {
         this.elements.contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
+        });
+        this.elements.inputs.forEach(input => {
+            input.addEventListener("invalid", (e) => {
+                let inputValue = e.target;
+                if(inputValue.validity.valueMissing) {
+                    console.log(input, "error");
+                    inputValue.setCustomValidity(" ");
+                    input.setAttribute("aria-invalid", "true");
+                    this.setInputErrorActive(input);
+                }
+            });
+            input.addEventListener("change", () => {
+                if(input.getAttribute("aria-invalid") == "true") {
+                    this.setInputErrorInactive(input);
+                }
+            });
+        });
+    }
 
-            const formData = new FormData(this.elements.contactForm);
-            console.log(formData.get("first-name"));
-        })
+    setInputErrorActive(input) {
+        const parent = input.closest('.form-control');
+        input.classList.add("input-error");
+        parent.querySelector(".error-msg").classList.remove("hidden");
+    }
+
+    setInputErrorInactive(input) {
+        const parent = input.closest('.form-control');
+        input.classList.remove("input-error")
+        parent.querySelector(".error-msg").classList.add("hidden");
     }
 }
 

@@ -614,6 +614,7 @@ video {
 body {
   display: flex;
   min-height: 100vh;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--green-200-lighter);
@@ -728,8 +729,8 @@ fieldset.form-control {
 
 .input-checkbox, .input-radio {
   position: absolute;
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
   border-width: 2px;
   opacity: 0;
 }
@@ -742,13 +743,59 @@ fieldset.form-control {
 .input-checkbox-custom, .input-radio-custom {
   position: relative;
   aspect-ratio: 1 / 1;
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 1.5rem;
+  width: 1.5rem;
   border-width: 2px;
 }
 
 .input-checkbox-custom {
   border-color: var(--grey-500-medium);
+}
+
+.input-checkbox:checked + .input-checkbox-custom {
+  background-image: url(../images/icon-checkbox-check.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.input-radio:checked + .input-radio-custom {
+  background-image: url(../images/icon-radio-selected.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.input-radio-wrapper:has(> .input-radio:checked) {
+  background-color: var(--green-200-lighter);
+}
+
+.success-modal {
+  position: sticky;
+  top: 1.25rem;
+  z-index: 20;
+  display: grid;
+  max-width: 18rem;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: var(--grey-900-darker);
+  padding: 1rem;
+  color: var(--white);
+}
+
+.success-modal > h2 {
+  width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.success-modal > p {
+  grid-column: span 2 / span 2;
+  color: var(--grey-500-medium);
 }
 
 .btn {
@@ -791,6 +838,22 @@ fieldset.form-control {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -804,6 +867,10 @@ fieldset.form-control {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -812,16 +879,16 @@ fieldset.form-control {
   aspect-ratio: 1 / 1;
 }
 
-.h-5 {
-  height: 1.25rem;
+.h-6 {
+  height: 1.5rem;
 }
 
 .h-60 {
   height: 15rem;
 }
 
-.w-5 {
-  width: 1.25rem;
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-full {
@@ -832,12 +899,24 @@ fieldset.form-control {
   min-width: 0px;
 }
 
+.max-w-72 {
+  max-width: 18rem;
+}
+
 .max-w-xs {
   max-width: 20rem;
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-cols-\[auto_1fr\] {
+  grid-template-columns: auto 1fr;
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -884,12 +963,12 @@ fieldset.form-control {
   border-radius: 0.5rem;
 }
 
-.border-2 {
-  border-width: 2px;
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
-.border-green-600-medium {
-  border-color: var(--green-600-medium);
+.border-2 {
+  border-width: 2px;
 }
 
 .border-grey-500-medium {
@@ -904,8 +983,28 @@ fieldset.form-control {
   background-color: var(--green-600-medium);
 }
 
+.bg-grey-900-darker {
+  background-color: var(--grey-900-darker);
+}
+
 .bg-white {
   background-color: var(--white);
+}
+
+.bg-\[url\(\.\.\/images\/icon-checkbox-check\.svg\)\] {
+  background-image: url(../images/icon-checkbox-check.svg);
+}
+
+.bg-\[url\(\.\.\/images\/icon-radio-selected\.svg\)\] {
+  background-image: url(../images/icon-radio-selected.svg);
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .p-6 {
@@ -950,6 +1049,10 @@ fieldset.form-control {
   font-weight: 700;
 }
 
+.text-grey-500-medium {
+  color: var(--grey-500-medium);
+}
+
 .text-grey-900-darker {
   color: var(--grey-900-darker);
 }
@@ -977,11 +1080,6 @@ fieldset.form-control {
 
 .error-msg {
   color: var(--red);
-}
-
-.input-radio-checked {
-  border-color: var(--green-600-medium);
-  background-color: var(--green-200-lighter);
 }
 
 .hover\:border-green-600-medium:hover {
