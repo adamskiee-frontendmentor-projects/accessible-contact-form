@@ -22,14 +22,14 @@ class ContactForm {
 
         this.elements.inputs.forEach(input => {
             input.addEventListener("invalid", (e) => {
-                let inputValue = e.target;
+                const inputValue = e.target;
                 if(inputValue.validity.valueMissing || inputValue.validity.typeMismatch) {
                     inputValue.setCustomValidity(" ");
                     this.setInputErrorActive(input);
                 }
             });
             input.addEventListener("change", () => {
-                if(input.getAttribute("aria-invalid") == "true") {
+                if(input.getAttribute("aria-invalid") === "true") {
                     
                     this.setInputErrorInactive(input);
                 }
