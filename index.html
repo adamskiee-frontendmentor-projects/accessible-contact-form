@@ -26,7 +26,7 @@
         ></path>
       </symbol>
     </svg>
-    <div class="success-modal">
+    <div class="success-modal hidden" id="success-modal" aria-live="polite">
       <img src="./build/images/icon-success-check.svg" alt="">
       <h2>Message Sent!</h2>
       <p>Thanks for completing the form. We'll be in touch soon!</p>
@@ -159,7 +159,7 @@
           class="input-field input input-textarea"
           required
         ></textarea>
-        <span class="error-msg hidden" id="message-error hidden"
+        <span class="error-msg hidden" id="message-error"
           >This field is required</span
         >
       </div>
@@ -183,7 +183,7 @@
             <span class="sr-only">Required</span>
           </span>
         </label>
-        <span id="consent-erorr" class="error-msg hidden"
+        <span id="consent-error" class="error-msg hidden"
           >To submit this form, please consent to being contacted</span
         >
       </div>

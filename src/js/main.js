@@ -5,7 +5,8 @@ class ContactForm {
             radios: document.querySelectorAll(".input-radio"),
             inputs: document.querySelectorAll(".input"),
             consentCheckbox: document.getElementById("consent"),
-            firstName: document.getElementById("first-name")
+            firstName: document.getElementById("first-name"),
+            successModal: document.getElementById("success-modal")
         }
         this.init();
     }
@@ -17,19 +18,22 @@ class ContactForm {
     bindEvents() {
         this.elements.contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
+            console.log("submit");
+            this.elements.successModal.classList.remove("hidden");
+            this.elements.contactForm.reset();
         });
+        
         this.elements.inputs.forEach(input => {
             input.addEventListener("invalid", (e) => {
                 let inputValue = e.target;
-                if(inputValue.validity.valueMissing) {
-                    console.log(input, "error");
+                if(inputValue.validity.valueMissing || inputValue.validity.typeMismatch) {
                     inputValue.setCustomValidity(" ");
-                    input.setAttribute("aria-invalid", "true");
                     this.setInputErrorActive(input);
                 }
             });
             input.addEventListener("change", () => {
                 if(input.getAttribute("aria-invalid") == "true") {
+                    
                     this.setInputErrorInactive(input);
                 }
             });
@@ -39,12 +43,14 @@ class ContactForm {
     setInputErrorActive(input) {
         const parent = input.closest('.form-control');
         input.classList.add("input-error");
+        input.setAttribute("aria-invalid", "true");
         parent.querySelector(".error-msg").classList.remove("hidden");
     }
 
     setInputErrorInactive(input) {
         const parent = input.closest('.form-control');
         input.classList.remove("input-error")
+        input.setAttribute("aria-invalid", "false");
         parent.querySelector(".error-msg").classList.add("hidden");
     }
 }
