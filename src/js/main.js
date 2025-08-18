@@ -2,10 +2,7 @@ class ContactForm {
     constructor() {
         this.elements = {
             contactForm: document.getElementById("form"),
-            radios: document.querySelectorAll(".input-radio"),
             inputs: document.querySelectorAll(".input"),
-            consentCheckbox: document.getElementById("consent"),
-            firstName: document.getElementById("first-name"),
             successModal: document.getElementById("success-modal")
         }
         this.init();
@@ -22,7 +19,7 @@ class ContactForm {
             this.elements.successModal.classList.remove("hidden");
             this.elements.contactForm.reset();
         });
-        
+
         this.elements.inputs.forEach(input => {
             input.addEventListener("invalid", (e) => {
                 let inputValue = e.target;
