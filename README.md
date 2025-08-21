@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/Adamskiee/accessible-contact-form)
-- Live Site URL: [Live Site URL](https://adamskiee.github.io/accessible-contact-form)
+- Solution URL: [GitHub](https://github.com/adamskiee-frontendmentor-projects/accessible-contact-form)
+- Live Site URL: [Live Site URL](https://adamskiee-frontendmentor-projects.github.io/accessible-contact-form)
 
 ## My process
 
